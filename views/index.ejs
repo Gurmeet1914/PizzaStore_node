@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ("./header.ejs") %> 
+<body>
+    <h1 class="p-2 mt-5 font-italic">All Pizza Orders</h1> 
+    <div class="container">
+      <div class="mt-5">
+      <% if(orders.length>0){%>
+        <% orders.forEach(order=>{%> 
+          <div class="row mt-5">
+            <div class="col-md-2">
+              <img src="../pizza.png" alt="" width="160">
+            </div>
+            <div class="col-md-10">
+              <h5>Name: <%= order.name %> </h5>
+              <p>Pizza Order: <%= order.pizza %> </p>
+              <p>Location: <%= order.location %> </p>
+              <p>Order Time: <%= order.createdAt %> </p>
+            </div>
+          </div>
+        <% }) %> 
+
+      <% }else{%>  
+        <h4 class="text-center">There are no orders yes :(</h4>
+      <% }%> 
+      </div>
+    </div>
+</body>
+<%- include ("./footer.ejs") %> 
+</html>
